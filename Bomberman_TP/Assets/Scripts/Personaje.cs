@@ -12,7 +12,7 @@ public class Personaje : MonoBehaviour
         Caminar();
     }
 
-    void Caminar() //movimiento del jugador
+    void Caminar() //movimiento del player
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
