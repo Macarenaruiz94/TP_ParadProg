@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Coleccionables : MonoBehaviour
 {
+    public int puntaje;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,13 @@ public class Coleccionables : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (CompareTag == Player)
+        {
+            Destroy(this);
+        }
     }
 }

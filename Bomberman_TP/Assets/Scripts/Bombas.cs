@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bombas : MonoBehaviour
 {
+    float activar;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,15 @@ public class Bombas : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void Explotar()
+    {
+
+    }
+
+    void DañoCausado()
+    {
+
     }
 }
