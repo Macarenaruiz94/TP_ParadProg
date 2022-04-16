@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class LadrillosRompibles : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (CompareTag("Bomb"))
+        {
+            Destroy(this); //destruir los ladrillos cuando colisionen con la bomba y su rango de daño
+        }
     }
 }

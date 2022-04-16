@@ -4,39 +4,35 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    int vida;
     float velocidad = 6f;
+    int puntaje = 0;
 
     private void Update()
     {
         Caminar();
     }
 
-    void Caminar()
+    void Caminar() //movimiento del jugador
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
     }
 
-    void AgarrarItem()
+    void AgarrarItem() //si el player colisiona con los item, el puntaje sube de a uno
     {
-        if (CompareTag == Item)
+        if (CompareTag("Item"))
         {
-            
-        }
-    }
-
-    void PonerBomba()
-    {
-        if (KeyCode.E)
-        {
-            
+            puntaje =+ 1;
         }
     }
 
     void Destruirse()
     {
-
+        if (CompareTag("Bomb"))
+        {
+            
+            Destroy(this); //el player muere cuando colisiona con la bomba
+        }
     }
 }

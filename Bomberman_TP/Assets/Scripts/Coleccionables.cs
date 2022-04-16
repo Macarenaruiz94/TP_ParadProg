@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class Coleccionables : MonoBehaviour
 {
-    public int puntaje;
+    public bool active = false;
 
-
-    // Start is called before the first frame update
-    void Start()
+    void Activar()
     {
-        
+        if (LadrillosRompibles.Destroy) //si se ejecuta la función que destrulle los ladrillos se activan los items
+        {
+            active = true;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision coll)
     {
-        if (CompareTag == Player)
+        if (CompareTag("Player")) //destruir item cuando colisiona con el player
         {
             Destroy(this);
         }
