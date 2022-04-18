@@ -14,7 +14,7 @@ public class Bombas : MonoBehaviour
 
     void Explotar()
     {
-        if (KeyCode.E) //presionar la tecla "E" para activar la bomba
+        if (Input.GetKeyDown("e")) //presionar la tecla "E" para activar la bomba
         {
             active = true;
             activar = 2; //esperar dos segundos antes de explotar
